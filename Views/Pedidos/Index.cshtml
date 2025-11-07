@@ -1,0 +1,37 @@
+@model IEnumerable<CupcakeStore.Models.Pedido>
+@{
+    ViewData["Title"] = "Meus Pedidos";
+}
+
+<h3 class="text-brown mb-3">Meus Pedidos</h3>
+
+<table class="table table-hover align-middle">
+    <thead>
+        <tr class="text-center">
+            <th>ID</th>
+            <th>Data</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr class="text-center">
+                <td>@p.Id</td>
+                <td>@p.Data.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>R$ @p.Total</td>
+                <td>@p.Status</td>
+                <td>
+                    <a href="/Pedidos/Detalhes/@p.Id" class="btn btn-sm btn-pink">Ver Detalhes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .text-brown { color:#5a2a27; }
+    .btn-pink { background-color:#ffb6c1; color:#5a2a27; }
+</style>

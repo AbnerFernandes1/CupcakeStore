@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Avaliar Pedido";
+}
+
+<h4 class="text-brown mb-3">Avaliar Pedido #@ViewBag.PedidoId</h4>
+
+<form method="post" asp-action="Avaliar">
+    <input type="hidden" name="pedidoId" value="@ViewBag.PedidoId" />
+    <div class="mb-3">
+        <label>Nota (1 a 5):</label>
+        <input type="number" name="nota" min="1" max="5" class="form-control w-25" required />
+    </div>
+    <div class="mb-3">
+        <label>Comentário:</label>
+        <textarea name="comentario" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-brown">Enviar Avaliação</button>
+</form>
+
+<style>
+    .text-brown { color:#5a2a27; }
+    .btn-brown { background-color:#5a2a27; color:#fff; }
+</style>

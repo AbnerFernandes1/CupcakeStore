@@ -1,0 +1,131 @@
+@using System.Globalization
+@model IEnumerable<CupcakeStore.Models.CarrinhoItem>
+@{
+    ViewData["Title"] = "Meu Carrinho";
+    var total = ViewBag.Total ?? 0M;
+}
+
+<h3 class="text-brown text-center mb-4">Meu Carrinho</h3>
+
+@if (!Model.Any())
+{
+    <p class="text-center text-muted">Seu carrinho está vazio 😢</p>
+}
+else
+{
+    @if (TempData["ErroCupom"] != null)
+    {
+        <div class="alert alert-danger text-end">@TempData["ErroCupom"]</div>
+    }
+
+    @if (TempData["SucessoCupom"] != null)
+    {
+        <div class="alert alert-success text-end">@TempData["SucessoCupom"]</div>
+    }
+
+    <table class="table table-bordered align-middle text-center">
+        <thead class="table-light">
+            <tr>
+                <th>Imagem</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.Cupcake.ImagemUrl" alt="@item.Cupcake.Nome" class="img-thumbnail"
+                            style="width: 60px; height: 60px; object-fit: cover;" />
+                    </td>
+                    <td>@item.Cupcake.Nome</td>
+                    <td>R$ @item.Cupcake.Preco</td>
+                    <td>
+                        <div class="d-flex justify-content-center align-items-center gap-1">
+                            <form method="post" asp-action="Diminuir" asp-controller="Carrinho">
+                                <input type="hidden" name="id" value="@item.CupcakeId" />
+                                <button type="submit" class="btn btn-outline-secondary btn-sm px-2">−</button>
+                            </form>
+
+                            <span class="mx-2">@item.Quantidade</span>
+
+                            <form method="post" asp-action="Adicionar" asp-controller="Carrinho">
+                                <input type="hidden" name="id" value="@item.CupcakeId" />
+                                <button type="submit" class="btn btn-outline-secondary btn-sm px-2">+</button>
+                            </form>
+                        </div>
+                    </td>
+                    <td>R$ @(item.Cupcake.Preco * item.Quantidade)</td>
+                    <td>
+                        <a href="/Carrinho/Remover/@item.CupcakeId" class="btn btn-sm btn-outline-danger">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    decimal subtotal = Model.Sum(item => item.Cupcake.Preco * item.Quantidade);
+    decimal desconto = 0;
+
+    if (Context.Session.GetString("CupomDesconto") != null)
+    {
+        decimal.TryParse(Context.Session.GetString("CupomDesconto"), NumberStyles.Any, CultureInfo.InvariantCulture, out
+        desconto);
+    }
+
+    decimal tot = subtotal - desconto;
+
+    <div class="text-end mt-4">
+        <p><strong>Subtotal:</strong> R$ @subtotal.ToString("N2")</p>
+
+        @if (desconto > 0)
+        {
+            <p class="text-success"><strong>Desconto aplicado:</strong> -R$ @desconto.ToString("N2")</p>
+        }
+
+        <p><strong>Total:</strong> R$ @tot.ToString("N2")</p>
+    </div>
+
+    <form method="post" action="/Carrinho/AplicarCupom" class="d-flex justify-content-end gap-2 mb-3">
+        <input type="text" name="codigo" placeholder="Cupom de desconto" class="form-control w-25" />
+        <button class="btn btn-pink">Aplicar</button>
+    </form>
+
+    <div class="d-flex justify-content-end gap-3">
+        <a href="/Cupcakes" class="btn btn-secondary">Continuar Comprando</a>
+        <a href="/Checkout" class="btn btn-brown">Finalizar Compra</a>
+    </div>
+}
+
+<style>
+    .btn-brown {
+        background-color: #5a2a27;
+        color: #fff;
+    }
+
+    .btn-pink {
+        background-color: #ffb6c1;
+        color: #5a2a27;
+    }
+
+    .btn-brown {
+        background-color: #5a2a27;
+        color: #fff;
+    }
+
+    .btn-pink {
+        background-color: #ffb6c1;
+        color: #5a2a27;
+    }
+
+    button.btn-sm {
+        min-width: 28px;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.85rem;
+    }
+</style>

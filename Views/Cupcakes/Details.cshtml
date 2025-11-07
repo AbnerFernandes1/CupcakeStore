@@ -1,0 +1,20 @@
+@model CupcakeStore.Models.Cupcake
+@{
+    ViewData["Title"] = "Detalhes do Cupcake";
+}
+
+<div class="card mx-auto shadow-sm" style="max-width:600px;">
+    <img src="@Model.ImagemUrl" class="card-img-top" alt="@Model.Nome" />
+    <div class="card-body">
+        <h4>@Model.Nome</h4>
+        <p>@Model.Descricao</p>
+        <p><strong>Preço:</strong> R$ @Model.Preco</p>
+        <p><strong>Categoria:</strong> @Model.Categoria</p>
+        <a href="/Carrinho/Adicionar/@Model.Id" class="btn btn-brown">Adicionar ao Carrinho</a>
+        <a href="/Cupcakes" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>
+
+<style>
+    .btn-brown { background-color:#5a2a27; color:#fff; }
+</style>

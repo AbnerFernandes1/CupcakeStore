@@ -1,0 +1,76 @@
+@model IEnumerable<CupcakeStore.Models.Cupcake>
+
+@{
+    ViewData["Title"] = "Catálogo de Cupcakes";
+}
+
+<h2 class="text-center text-brown mb-4">Catálogo de Cupcakes</h2>
+
+<div class="text-center mb-4">
+    <form method="get" asp-action="Index">
+        <select name="categoria" class="form-select w-auto d-inline">
+            <option value="">Todas as categorias</option>
+            @foreach (var cat in ViewBag.Categorias)
+            {
+                <option value="@cat" selected="@(ViewBag.CategoriaSelecionada == cat.ToString())">@cat</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-sm btn-brown ms-2">Filtrar</button>
+    </form>
+</div>
+
+<div class="row">
+    @foreach (var cupcake in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card cupcake-card shadow-sm">
+                <img src="@cupcake.ImagemUrl" class="card-img-top" alt="@cupcake.Nome" />
+                <div class="card-body text-center">
+                    <h6 class="fw-bold">@cupcake.Nome</h6>
+                    <p class="text-muted small">@cupcake.Descricao</p>
+                    <p class="fw-bold">R$ @cupcake.Preco</p>
+                    <a href="/Cupcakes/Details/@cupcake.Id" class="btn btn-pink btn-sm">Detalhes</a>
+                    <a href="/Carrinho/Adicionar/@cupcake.Id" class="btn btn-brown btn-sm">Adicionar</a>
+                </div>
+            </div>
+        </div>
+    }
+
+    <style>
+        .cupcake-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .cupcake-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .cupcake-card:hover .btn-pink {
+            background-color: #d63384;
+            color: white;
+        }
+
+        .cupcake-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .cupcake-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-brown {
+            background-color: #5a2a27;
+            color: #fff;
+        }
+
+        .btn-pink {
+            background-color: #ffb6c1;
+            color: #5a2a27;
+        }
+
+        .text-brown {
+            color: #5a2a27;
+        }
+    </style>

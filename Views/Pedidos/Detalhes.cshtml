@@ -1,0 +1,50 @@
+@model CupcakeStore.Models.Pedido
+@{
+    ViewData["Title"] = "Detalhes do Pedido";
+}
+
+<h4 class="text-brown">Pedido #@Model.Id</h4>
+<p><strong>Data:</strong> @Model.Data</p>
+<p><strong>Status:</strong> @Model.Status</p>
+<p><strong>Cliente:</strong> @Model.Cliente.Nome</p>
+<p><strong>Endereço:</strong> @Model.Endereco.Rua, @Model.Endereco.Numero - @Model.Endereco.Bairro, @Model.Endereco.Cidade/@Model.Endereco.UF</p>
+
+<table class="table mt-4">
+    <thead><tr><th>Imagem</th><th>Produto</th><th>Qtd</th><th>Preço</th><th>Subtotal</th></tr></thead>
+    <tbody>
+        @foreach (var i in Model.Itens)
+        {
+            <tr>
+                <td>
+                        <img src="@i.Cupcake.ImagemUrl" alt="@i.Cupcake.Nome" class="img-thumbnail"
+                            style="width: 60px; height: 60px; object-fit: cover;" />
+                </td>
+                <td>@i.Cupcake.Nome</td>
+                <td>@i.Quantidade</td>
+                <td>R$ @i.ValorUnitario</td>
+                <td>R$ @(i.ValorUnitario * i.Quantidade)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h5 class="text-end text-brown mt-3">Total: R$ @Model.Total</h5>
+
+@if (Model.Avaliacao == null)
+{
+    <div class="text-end">
+        <a href="/Pedidos/Avaliar/@Model.Id" class="btn btn-brown">Avaliar Pedido</a>
+    </div>
+}
+else
+{
+    <div class="alert alert-success mt-4">
+        <strong>Avaliação:</strong> @Model.Avaliacao.Nota estrelas<br />
+        <em>@Model.Avaliacao.Comentario</em>
+    </div>
+}
+
+<style>
+    .text-brown { color:#5a2a27; }
+    .btn-brown { background-color:#5a2a27; color:#fff; }
+</style>
