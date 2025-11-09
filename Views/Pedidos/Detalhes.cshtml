@@ -40,13 +40,13 @@
                         <div class="text-success circle"><strong>1</strong></div>
                         <strong><p>Pedido Realizado</p></strong>
                     </div>
-                    <div class="text-success step @(confirmado ? "done" : "")">
-                        <div class="text-success circle"><strong>2</strong></div>
-                        <strong><p>Pagamento Confirmado</p></strong>
+                    <div class="step @(confirmado ? "done" : "")">
+                        <div class="circle">2</div>
+                        <p>Pagamento Confirmado</p>
                     </div>
-                    <div class="text-success step @(separacao ? "done" : "")">
-                        <div class="text-success circle"><strong>3</strong></div>
-                        <strong><p>Pedido em Separação</p></strong>
+                    <div class="step @(separacao ? "done" : "")">
+                        <div class="circle">3</div>
+                        <p>Pedido em Separação</p>
                     </div>
                     <div class="step @(entregue ? "done-brown" : "")">
                         <div class="circle">4</div>
@@ -103,6 +103,7 @@
     @if (Model.Avaliacao == null)
     {
         <div class="text-end">
+            <a href="/Pedidos/Index/@Model.Id" class="btn btn-brown px-4">Voltar</a>
             <a href="/Pedidos/Avaliar/@Model.Id" class="btn btn-brown px-4">Avaliar Pedido</a>
         </div>
     }

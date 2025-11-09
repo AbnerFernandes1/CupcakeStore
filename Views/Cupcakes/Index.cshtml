@@ -40,7 +40,7 @@
                 <div class="card-body text-center">
                     <h6 class="fw-bold cupcake-nome">@cupcake.Nome</h6>
                     <p class="text-muted small">@cupcake.Descricao</p>
-                    <p class="fw-bold">R$ @cupcake.Preco</p>
+                    <p class="fw-bold">R$ @cupcake.Preco.ToString("F2")</p>
                     <a href="/Cupcakes/Details/@cupcake.Id" class="btn btn-pink btn-sm">Detalhes</a>
                     <a href="/Carrinho/Adicionar/@cupcake.Id" class="btn btn-brown btn-sm">Adicionar</a>
                 </div>
