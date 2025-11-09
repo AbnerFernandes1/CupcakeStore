@@ -1,0 +1,397 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\CupcakeStore.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CupcakeStore.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\abacaxi.jpg",
+      "PackagePath": "staticwebassets\\img\\abacaxi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\amendoim.jpg",
+      "PackagePath": "staticwebassets\\img\\amendoim.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\banana.jpg",
+      "PackagePath": "staticwebassets\\img\\banana.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\banner1.jpg",
+      "PackagePath": "staticwebassets\\img\\banner1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\banner2.jpg",
+      "PackagePath": "staticwebassets\\img\\banner2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\banner3.jpg",
+      "PackagePath": "staticwebassets\\img\\banner3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\baunilha.jpg",
+      "PackagePath": "staticwebassets\\img\\baunilha.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\brigadeiro.jpg",
+      "PackagePath": "staticwebassets\\img\\brigadeiro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\cafe.jpg",
+      "PackagePath": "staticwebassets\\img\\cafe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\caramelo.jpg",
+      "PackagePath": "staticwebassets\\img\\caramelo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\cenoura.jpg",
+      "PackagePath": "staticwebassets\\img\\cenoura.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\cheesecake.jpg",
+      "PackagePath": "staticwebassets\\img\\cheesecake.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\chocolate.jpg",
+      "PackagePath": "staticwebassets\\img\\chocolate.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\chocolateamargo.jpg",
+      "PackagePath": "staticwebassets\\img\\chocolateamargo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\chocolatebranco.jpg",
+      "PackagePath": "staticwebassets\\img\\chocolatebranco.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\chocolatepimenta.jpg",
+      "PackagePath": "staticwebassets\\img\\chocolatepimenta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\coco.jpg",
+      "PackagePath": "staticwebassets\\img\\coco.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\framboesa.jpg",
+      "PackagePath": "staticwebassets\\img\\framboesa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\frutasvermelhas.jpg",
+      "PackagePath": "staticwebassets\\img\\frutasvermelhas.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\laranja.jpg",
+      "PackagePath": "staticwebassets\\img\\laranja.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\leiteninho.jpg",
+      "PackagePath": "staticwebassets\\img\\leiteninho.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\limao.jpg",
+      "PackagePath": "staticwebassets\\img\\limao.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\limaococo.jpg",
+      "PackagePath": "staticwebassets\\img\\limaococo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\maracuja.jpg",
+      "PackagePath": "staticwebassets\\img\\maracuja.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\menta.jpg",
+      "PackagePath": "staticwebassets\\img\\menta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\morango.jpg",
+      "PackagePath": "staticwebassets\\img\\morango.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\nozes.jpg",
+      "PackagePath": "staticwebassets\\img\\nozes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\nutella.jpg",
+      "PackagePath": "staticwebassets\\img\\nutella.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\oreo.jpg",
+      "PackagePath": "staticwebassets\\img\\oreo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\pacoca.jpg",
+      "PackagePath": "staticwebassets\\img\\pacoca.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\pistache.jpg",
+      "PackagePath": "staticwebassets\\img\\pistache.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\redvelvet.jpg",
+      "PackagePath": "staticwebassets\\img\\redvelvet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\img\\tropicais.jpg",
+      "PackagePath": "staticwebassets\\img\\tropicais.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abner\\OneDrive\\Área de Trabalho\\CupcakeStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.CupcakeStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.CupcakeStore.props",
+      "PackagePath": "build\\CupcakeStore.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CupcakeStore.props",
+      "PackagePath": "buildMultiTargeting\\CupcakeStore.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.CupcakeStore.props",
+      "PackagePath": "buildTransitive\\CupcakeStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

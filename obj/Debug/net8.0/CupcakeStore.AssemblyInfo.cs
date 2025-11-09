@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CupcakeStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86b2534f2e28a86b50a2d5ed4219a4667bf758dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beceb22ceea32107750064aaf9a64cc9862749c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("CupcakeStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CupcakeStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
