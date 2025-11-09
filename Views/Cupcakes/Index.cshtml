@@ -7,17 +7,29 @@
 <h2 class="text-center text-brown mb-4">Catálogo de Cupcakes</h2>
 
 <div class="text-center mb-4">
-    <form method="get" asp-action="Index">
-        <select name="categoria" class="form-select w-auto d-inline">
+    <form method="get" asp-action="Index"
+        class="d-inline-flex align-items-center flex-wrap justify-content-center gap-2">
+        <select name="categoria" class="form-select w-auto">
             <option value="">Todas as categorias</option>
             @foreach (var cat in ViewBag.Categorias)
             {
                 <option value="@cat" selected="@(ViewBag.CategoriaSelecionada == cat.ToString())">@cat</option>
             }
         </select>
-        <button type="submit" class="btn btn-sm btn-brown ms-2">Filtrar</button>
+
+        <input type="text" name="termo" value="@ViewBag.TermoBusca" class="form-control w-auto"
+            placeholder="Pesquisar cupcakes..." />
+
+        <select name="ordenarPor" class="form-select w-auto">
+            <option value="Nome" selected="@(ViewBag.OrdenarPor == "Nome")">Ordenar por nome</option>
+            <option value="PrecoAsc" selected="@(ViewBag.OrdenarPor == "PrecoAsc")">Menor preço</option>
+            <option value="PrecoDesc" selected="@(ViewBag.OrdenarPor == "PrecoDesc")">Maior preço</option>
+        </select>
+
+        <button type="submit" class="btn btn-sm btn-brown">Aplicar</button>
     </form>
 </div>
+
 
 <div class="row">
     @foreach (var cupcake in Model)
@@ -26,7 +38,7 @@
             <div class="card cupcake-card shadow-sm">
                 <img src="@cupcake.ImagemUrl" class="card-img-top" alt="@cupcake.Nome" />
                 <div class="card-body text-center">
-                    <h6 class="fw-bold">@cupcake.Nome</h6>
+                    <h6 class="fw-bold cupcake-nome">@cupcake.Nome</h6>
                     <p class="text-muted small">@cupcake.Descricao</p>
                     <p class="fw-bold">R$ @cupcake.Preco</p>
                     <a href="/Cupcakes/Details/@cupcake.Id" class="btn btn-pink btn-sm">Detalhes</a>
@@ -72,5 +84,34 @@
 
         .text-brown {
             color: #5a2a27;
+        }
+
+        .cupcake-nome {
+            font-size: 0.95rem;
+            /* 🔹 menor que o padrão h6 */
+            line-height: 1.2rem;
+            color: #5a2a27;
+            /* marrom suave */
+            margin-bottom: 0.4rem;
+            min-height: 2.4rem;
+            /* 🔹 mantém altura uniforme mesmo se o nome for curto */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* 🔹 no máximo 2 linhas */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .form-select,
+        .form-control {
+            min-width: 150px;
+        }
+
+        @@media (max-width: 768px) {
+            form.d-inline-flex {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
     </style>

@@ -58,9 +58,19 @@ namespace CupcakeStore.Controllers
         {
             var carrinho = ObterCarrinho();
             var item = carrinho.FirstOrDefault(c => c.CupcakeId == id);
-            if (item != null) carrinho.Remove(item);
+
+            if (item != null)
+                carrinho.Remove(item);
 
             SalvarCarrinho(carrinho);
+
+            if (!carrinho.Any())
+            {
+                HttpContext.Session.Remove("CupomCodigo");
+                HttpContext.Session.Remove("CupomDesconto");
+                TempData["InfoCarrinho"] = "Carrinho esvaziado — cupom de desconto removido.";
+            }
+
             return RedirectToAction("Index");
         }
 
@@ -79,12 +89,24 @@ namespace CupcakeStore.Controllers
             }
 
             SalvarCarrinho(carrinho);
+
+            if (!carrinho.Any())
+            {
+                HttpContext.Session.Remove("CupomCodigo");
+                HttpContext.Session.Remove("CupomDesconto");
+                TempData["InfoCarrinho"] = "Carrinho esvaziado — cupom de desconto removido.";
+            }
+
             return RedirectToAction("Index");
         }
 
         public IActionResult Limpar()
         {
-            SalvarCarrinho(new List<CarrinhoItem>());
+            HttpContext.Session.Remove("CARRINHO");
+            HttpContext.Session.Remove("CupomCodigo");
+            HttpContext.Session.Remove("CupomDesconto");
+
+            TempData["InfoCarrinho"] = "Carrinho e cupom de desconto foram limpos.";
             return RedirectToAction("Index");
         }
 

@@ -484,9 +484,9 @@ namespace CupcakeStore.Migrations
                             Id = 1,
                             Ativo = true,
                             Codigo = "PROMO10",
-                            CriadoEm = new DateTime(2025, 11, 5, 22, 54, 59, 777, DateTimeKind.Local).AddTicks(5236),
+                            CriadoEm = new DateTime(2025, 11, 9, 15, 42, 37, 144, DateTimeKind.Local).AddTicks(4101),
                             EhValorFixo = false,
-                            ExpiraEm = new DateTime(2025, 12, 5, 22, 54, 59, 777, DateTimeKind.Local).AddTicks(5248),
+                            ExpiraEm = new DateTime(2025, 12, 9, 15, 42, 37, 144, DateTimeKind.Local).AddTicks(4115),
                             UsoAtual = 0,
                             UsoMaximo = 100,
                             Valor = 10m
@@ -496,9 +496,9 @@ namespace CupcakeStore.Migrations
                             Id = 2,
                             Ativo = true,
                             Codigo = "CUPCAKE5",
-                            CriadoEm = new DateTime(2025, 11, 5, 22, 54, 59, 777, DateTimeKind.Local).AddTicks(5255),
+                            CriadoEm = new DateTime(2025, 11, 9, 15, 42, 37, 144, DateTimeKind.Local).AddTicks(4122),
                             EhValorFixo = true,
-                            ExpiraEm = new DateTime(2026, 1, 5, 22, 54, 59, 777, DateTimeKind.Local).AddTicks(5256),
+                            ExpiraEm = new DateTime(2026, 1, 9, 15, 42, 37, 144, DateTimeKind.Local).AddTicks(4123),
                             UsoAtual = 0,
                             UsoMaximo = 0,
                             Valor = 5m

@@ -3,48 +3,150 @@
     ViewData["Title"] = "Detalhes do Pedido";
 }
 
-<h4 class="text-brown">Pedido #@Model.Id</h4>
-<p><strong>Data:</strong> @Model.Data</p>
-<p><strong>Status:</strong> @Model.Status</p>
-<p><strong>Cliente:</strong> @Model.Cliente.Nome</p>
-<p><strong>Endereço:</strong> @Model.Endereco.Rua, @Model.Endereco.Numero - @Model.Endereco.Bairro, @Model.Endereco.Cidade/@Model.Endereco.UF</p>
+<div class="container mt-4 mb-5" style="max-width: 750px;">
+    <h3 class="text-center text-brown fw-bold mb-4">Informações do Pedido</h3>
 
-<table class="table mt-4">
-    <thead><tr><th>Imagem</th><th>Produto</th><th>Qtd</th><th>Preço</th><th>Subtotal</th></tr></thead>
-    <tbody>
-        @foreach (var i in Model.Itens)
-        {
-            <tr>
-                <td>
-                        <img src="@i.Cupcake.ImagemUrl" alt="@i.Cupcake.Nome" class="img-thumbnail"
-                            style="width: 60px; height: 60px; object-fit: cover;" />
-                </td>
-                <td>@i.Cupcake.Nome</td>
-                <td>@i.Quantidade</td>
-                <td>R$ @i.ValorUnitario</td>
-                <td>R$ @(i.ValorUnitario * i.Quantidade)</td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Número do Pedido:</strong> #@Model.Id</p>
+                    <p><strong>Data da Compra:</strong> @Model.Data.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Nome do Cliente:</strong> @Model.Cliente.Nome</p>
+                    <p><strong>Forma de Pagamento:</strong> @Model.FormaPagamento</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Endereço de Entrega:</strong><br />
+                        @Model.Endereco.Rua, @Model.Endereco.Numero<br />
+                        @Model.Endereco.Bairro<br />
+                        @Model.Endereco.Cidade - @Model.Endereco.UF<br />
+                        @Model.Endereco.CEP
+                    </p>
+                </div>
+            </div>
 
-<h5 class="text-end text-brown mt-3">Total: R$ @Model.Total</h5>
+            <!-- Linha de progresso -->
+            @{
+                var status = Model.Status?.ToLowerInvariant();
+                bool realizado = status.Contains("realizado") || status.Contains("confirmado") || status.Contains("separação") || status.Contains("entregue");
+                bool confirmado = status.Contains("confirmado") || status.Contains("separação") || status.Contains("entregue");
+                bool separacao = status.Contains("separação") || status.Contains("entregue");
+                bool entregue = status.Contains("entregue");
+            }
 
-@if (Model.Avaliacao == null)
-{
-    <div class="text-end">
-        <a href="/Pedidos/Avaliar/@Model.Id" class="btn btn-brown">Avaliar Pedido</a>
+            <div class="mt-4">
+                <div class="progress-status d-flex justify-content-between align-items-center">
+                    <div class="text-success step @(realizado ? "done" : "")">
+                        <div class="text-success circle"><strong>1</strong></div>
+                        <strong><p>Pedido Realizado</p></strong>
+                    </div>
+                    <div class="text-success step @(confirmado ? "done" : "")">
+                        <div class="text-success circle"><strong>2</strong></div>
+                        <strong><p>Pagamento Confirmado</p></strong>
+                    </div>
+                    <div class="text-success step @(separacao ? "done" : "")">
+                        <div class="text-success circle"><strong>3</strong></div>
+                        <strong><p>Pedido em Separação</p></strong>
+                    </div>
+                    <div class="step @(entregue ? "done-brown" : "")">
+                        <div class="circle">4</div>
+                        <p>Pedido Entregue</p>
+                    </div>
+                </div>
+                <p class="text-center text-muted small mt-2">Previsão de envio em 2 dias úteis</p>
+            </div>
+        </div>
     </div>
-}
-else
-{
-    <div class="alert alert-success mt-4">
-        <strong>Avaliação:</strong> @Model.Avaliacao.Nota estrelas<br />
-        <em>@Model.Avaliacao.Comentario</em>
+
+    <!-- Detalhes da entrega -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light fw-bold text-brown">Detalhes da Entrega</div>
+        <div class="card-body">
+            <p><strong>Entrega:</strong> Motoboy</p>
+            <p><strong>Previsão de Entrega:</strong> @Model.Data.ToString("dd/MM/yyyy")</p>
+        </div>
     </div>
-}
+
+    <!-- Itens do pedido -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light fw-bold text-brown">Itens do Pedido</div>
+        <div class="card-body">
+            <table class="table align-middle text-center">
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Produto</th>
+                        <th>Qtd</th>
+                        <th>Preço</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model.Itens)
+                    {
+                        <tr>
+                            <td><img src="@i.Cupcake.ImagemUrl" alt="@i.Cupcake.Nome"
+                                    class="img-thumbnail" style="width:60px;height:60px;object-fit:cover;border-radius:8px;" /></td>
+                            <td>@i.Cupcake.Nome</td>
+                            <td>@i.Quantidade</td>
+                            <td>R$ @i.ValorUnitario.ToString("N2")</td>
+                            <td>R$ @(i.ValorUnitario * i.Quantidade)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <h5 class="text-end text-brown mt-3 fw-bold">Total: R$ @Model.Total.ToString("N2")</h5>
+        </div>
+    </div>
+
+    <!-- Avaliação -->
+    @if (Model.Avaliacao == null)
+    {
+        <div class="text-end">
+            <a href="/Pedidos/Avaliar/@Model.Id" class="btn btn-brown px-4">Avaliar Pedido</a>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success mt-4">
+            <strong>Avaliação:</strong> @Model.Avaliacao.Nota ★<br />
+            <em>@Model.Avaliacao.Comentario</em>
+        </div>
+    }
+
+    <div class="text-center mt-4">
+        <button class="btn btn-outline-danger px-4">Solicitar Cancelamento</button>
+    </div>
+</div>
 
 <style>
     .text-brown { color:#5a2a27; }
-    .btn-brown { background-color:#5a2a27; color:#fff; }
+    .btn-brown { background-color:#5a2a27; color:#fff; border:none; }
+    .btn-brown:hover { background-color:#3b1b19; }
+
+    .progress-status { position:relative; margin-top:20px; }
+    .progress-status::before {
+        content:""; position:absolute; top:15px; left:0; right:0;
+        height:3px; background-color:#ddd; z-index:1;
+    }
+
+    .step { text-align:center; width:25%; position:relative; z-index:2; }
+    .step .circle {
+        width:25px; height:25px; border-radius:50%;
+        border:2px solid #aaa; margin:0 auto 8px;
+        display:flex; align-items:center; justify-content:center;
+        background:#fff; color:#aaa; font-size:0.8rem; font-weight:bold;
+        transition:0.3s;
+    }
+    .step.done .circle {
+        background-color:#3bb54a; /* verde */
+        border-color:#3bb54a;
+        color:#fff;
+    }
+    .step.done-brown .circle {
+        background-color:#5a2a27; /* marrom */
+        border-color:#5a2a27;
+        color:#fff;
+    }
+    .step p { font-size:0.85rem; margin:0; }
 </style>

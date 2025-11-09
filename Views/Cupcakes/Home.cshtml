@@ -1,0 +1,187 @@
+@model IEnumerable<CupcakeStore.Models.Cupcake>
+
+@{
+    ViewData["Title"] = "Cupcake Delícia";
+}
+
+<div class="container mt-4">
+    <div id="bannerCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner banner-container">
+            <div class="carousel-item active">
+                <img src="/img/banner1.jpg" class="d-block w-100 rounded shadow banner-img" alt="Banner 1" />
+            </div>
+            <div class="carousel-item">
+                <img src="/img/banner2.jpg" class="d-block w-100 rounded shadow banner-img" alt="Banner 2" />
+            </div>
+            <div class="carousel-item">
+                <img src="/img/banner3.jpg" class="d-block w-100 rounded shadow banner-img" alt="Banner 3" />
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+    <div class="text-center mb-4">
+        <form method="get" asp-action="Index">
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <button type="submit" name="categoria" value=""
+                    class="btn @(String.IsNullOrEmpty(ViewBag.CategoriaSelecionada) ? "btn-brown" : "btn-outline-brown")">
+                    Todas as Categorias
+                </button>
+
+                @foreach (var cat in Enum.GetValues(typeof(CupcakeStore.Models.CategoriaCupcake)))
+                {
+                    var nome = cat.ToString();
+                    bool selecionado = ViewBag.CategoriaSelecionada == nome;
+
+                    <button type="submit" name="categoria" value="@nome"
+                        class="btn @(selecionado ? "btn-brown" : "btn-outline-brown")">
+                        @nome
+                    </button>
+                }
+            </div>
+        </form>
+    </div>
+
+    <h4 class="text-center text-brown mb-3 fw-bold">CUPCAKES EM DESTAQUE</h4>
+    <div class="row justify-content-center mb-5">
+        @foreach (var cupcake in Model.Take(4))
+        {
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card cupcake-card shadow-sm text-center clickable-card"
+                    onclick="window.location.href='/Cupcakes/Details/@cupcake.Id'">
+                    <img src="@cupcake.ImagemUrl" class="card-img-top" alt="@cupcake.Nome" />
+                    <div class="card-body">
+                        <h6 class="fw-bold cupcake-nome">@cupcake.Nome</h6>
+                        <p class="fw-bold text-brown">R$ @cupcake.Preco.ToString("F2")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <h4 class="text-center text-brown mb-3 fw-bold">MAIS CUPCAKES</h4>
+    <div class="row justify-content-center mb-5">
+        @foreach (var cupcake in Model.Skip(4).Take(3))
+        {
+            <div class="col-md-4 col-sm-6 mb-3">
+                <div class="card cupcake-card shadow-sm text-center"
+                    onclick="window.location.href='/Cupcakes/Details/@cupcake.Id'">
+                    <img src="@cupcake.ImagemUrl" class="card-img-top" alt="@cupcake.Nome" />
+                    <div class="card-body">
+                        <h6 class="fw-bold cupcake-nome">@cupcake.Nome</h6>
+                        <p class="fw-bold text-brown">R$ @cupcake.Preco.ToString("F2")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <footer class="border-top pt-3 text-center text-muted small">
+        <div class="d-flex justify-content-center gap-4">
+            <a href="#" class="text-decoration-none text-brown">Política de Privacidade</a>
+            <a href="#" class="text-decoration-none text-brown">Redes Sociais</a>
+        </div>
+        <p class="mt-2 mb-0">© @DateTime.Now.Year Cupcake Delícia</p>
+    </footer>
+
+</div>
+
+<style>
+    .text-brown {
+        color: #5a2a27;
+    }
+
+    .btn-brown {
+        background-color: #5a2a27;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-outline-brown {
+        color: #5a2a27;
+        border: 1px solid #5a2a27;
+        background-color: transparent;
+    }
+
+    .btn-outline-brown:hover {
+        background-color: #5a2a27;
+        color: #fff;
+    }
+
+    .cupcake-card img {
+        transition: transform 0.3s ease;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .cupcake-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .cupcake-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .cupcake-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-brown {
+        background-color: #5a2a27;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-outline-brown {
+        color: #5a2a27;
+        border: 1px solid #5a2a27;
+        background-color: transparent;
+    }
+
+    .btn-outline-brown:hover {
+        background-color: #5a2a27;
+        color: #fff;
+    }
+
+    .btn-brown:hover {
+        background-color: #40201e;
+    }
+
+    .cupcake-desc {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        color: #7a6a65;
+        margin-bottom: 0.4rem;
+    }
+
+    .cupcake-nome {
+        font-size: 0.95rem;
+        line-height: 1.2rem;
+        color: #5a2a27;
+        margin-bottom: 0.4rem;
+        min-height: 2.4rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .clickable-card {
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .clickable-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+</style>

@@ -1,56 +1,190 @@
+@using System.Globalization
+@model IEnumerable<CupcakeStore.Models.CarrinhoItem>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
 @{
-    ViewData["Title"] = "Finalizar Pedido";
+    ViewData["Title"] = "Finalizar Compra";
     var cliente = ViewBag.Cliente as CupcakeStore.Models.Cliente;
     var endereco = ViewBag.Endereco as CupcakeStore.Models.Endereco;
+
+    decimal subtotal = Model.Sum(i => i.Cupcake.Preco * i.Quantidade);
+    decimal desconto = 0M;
+    decimal frete = 5M;
+
+    var descontoStr = HttpContextAccessor?.HttpContext?.Session?.GetString("CupomDesconto");
+    if (!string.IsNullOrEmpty(descontoStr))
+        decimal.TryParse(descontoStr, NumberStyles.Any, CultureInfo.InvariantCulture, out desconto);
+
+    decimal total = subtotal - desconto + frete;
 }
 
-<h3 class="text-brown mb-3 text-center">Finalizar Compra</h3>
+<div class="container mt-4 mb-5" style="max-width: 700px;">
+    <h3 class="text-center text-brown fw-bold mb-3">Finalizar Compra</h3>
+    <p class="text-center text-muted">Home > Carrinho > Checkout</p>
 
-<form method="post" asp-action="Finalizar">
-    <div class="row">
-        <div class="col-md-6">
-            <h5 class="text-brown">Dados do Cliente</h5>
-            <div class="mb-2">
-                <label>Nome</label>
-                <input name="nome" class="form-control" required value="@cliente?.Nome" />
-            </div>
-            <div class="mb-2">
-                <label>Email</label>
-                <input name="email" type="email" class="form-control" required value="@cliente?.Email" />
-            </div>
-            <div class="mb-2">
-                <label>Telefone</label>
-                <input name="telefone" class="form-control" required value="@cliente?.Telefone" />
+    <form method="post" asp-action="Finalizar" novalidate>
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-light fw-bold text-brown">Itens do Pedido</div>
+            <div class="card-body">
+                @foreach (var item in Model)
+                {
+                    <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="@item.Cupcake.ImagemUrl" alt="@item.Cupcake.Nome"
+                                style="width:60px;height:60px;border-radius:8px;object-fit:cover;" />
+                            <div class="ms-3">
+                                <p class="mb-0 fw-semibold">@item.Cupcake.Nome</p>
+                                <span class="form-control text-center bg-light fw-semibold">@item.Quantidade</span>
+                            </div>
+                        </div>
+                        <span class="fw-bold">R$ @item.Cupcake.Preco.ToString("N2")</span>
+                    </div>
+                }
+
+                <div class="mt-2">
+                    <div class="d-flex justify-content-between">
+                        <span>Subtotal</span>
+                        <span>R$ @subtotal.ToString("N2")</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Descontos</span>
+                        <span>−R$ @desconto.ToString("N2")</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>Frete</span>
+                        <span>R$ @frete.ToString("N2")</span>
+                    </div>
+                    <hr />
+                    <div class="d-flex justify-content-between fw-bold fs-5 text-brown">
+                        <span>Total</span>
+                        <span>R$ @total.ToString("N2")</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <h5 class="text-brown">Endereço de Entrega</h5>
-            <div class="mb-2"><label>Rua</label><input name="rua" class="form-control" required value="@endereco?.Rua" /></div>
-            <div class="mb-2"><label>Número</label><input name="numero" class="form-control" required value="@endereco?.Numero" /></div>
-            <div class="mb-2"><label>Bairro</label><input name="bairro" class="form-control" required value="@endereco?.Bairro" /></div>
-            <div class="mb-2"><label>Cidade</label><input name="cidade" class="form-control" required value="@endereco?.Cidade" /></div>
-            <div class="mb-2"><label>UF</label><input name="uf" maxlength="2" class="form-control" required value="@endereco?.UF" /></div>
-            <div class="mb-2"><label>CEP</label><input name="cep" class="form-control" required value="@endereco?.CEP" /></div>
-            <div class="mb-2"><label>Complemento</label><input name="complemento" class="form-control" required value="@endereco?.Complemento" /></div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-light fw-bold text-brown">Informações de Entrega</div>
+            <div class="card-body">
+                <p class="text-muted">Confirme ou preencha seus dados de entrega:</p>
+
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <label>Nome</label>
+                        <input name="nome" class="form-control" required value="@cliente?.Nome" />
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label>Email</label>
+                        <input name="email" type="email" class="form-control" required value="@cliente?.Email" />
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label>Telefone</label>
+                        <input name="telefone" class="form-control" required value="@cliente?.Telefone" />
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label>Rua</label>
+                        <input name="rua" class="form-control" required value="@endereco?.Rua" />
+                    </div>
+
+                    <div class="col-md-4 mb-2">
+                        <label>Número</label>
+                        <input name="numero" class="form-control" required value="@endereco?.Numero" />
+                    </div>
+
+                    <div class="col-md-8 mb-2">
+                        <label>Bairro</label>
+                        <input name="bairro" class="form-control" required value="@endereco?.Bairro" />
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <label>Cidade</label>
+                        <input name="cidade" class="form-control" required value="@endereco?.Cidade" />
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <label>UF</label>
+                        <input name="uf" maxlength="2" class="form-control" required value="@endereco?.UF" />
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <label>CEP</label>
+                        <input name="cep" class="form-control" required value="@endereco?.CEP" />
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                        <label>Complemento</label>
+                        <input name="complemento" class="form-control" value="@endereco?.Complemento" />
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="mt-4">
-        <h5 class="text-brown">Forma de Pagamento</h5>
-        <select name="formaPagamento" class="form-select w-50" required>
-            <option value="">Selecione</option>
-            <option>Cartão de Crédito</option>
-            <option>PIX</option>
-            <option>Boleto</option>
-        </select>
-    </div>
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-light fw-bold text-brown">Forma de Pagamento</div>
+            <div class="card-body d-flex flex-wrap justify-content-around">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="formaPagamento" id="credito"
+                        value="Cartão de Crédito" checked>
+                    <label class="form-check-label" for="credito">Cartão de Crédito</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="formaPagamento" id="boleto"
+                        value="Boleto Bancário">
+                    <label class="form-check-label" for="boleto">Boleto Bancário</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="formaPagamento" id="pix" value="PIX">
+                    <label class="form-check-label" for="pix">PIX</label>
+                </div>
+            </div>
+        </div>
 
-    <div class="text-end mt-4">
-        <button type="submit" class="btn btn-brown">Confirmar Pedido</button>
-    </div>
-</form>
+        <!-- ✅ BOTÃO -->
+        <div class="text-end">
+            <button type="submit" class="btn btn-brown px-4" disabled>Confirmar Pedido</button>
+        </div>
+    </form>
+</div>
 
 <style>
-    .text-brown { color:#5a2a27; }
-    .btn-brown { background-color:#5a2a27; color:#fff; }
+    .text-brown {
+        color: #5a2a27;
+    }
+
+    .btn-brown {
+        background-color: #5a2a27;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-brown:hover {
+        background-color: #3b1b19;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    input[type="radio"]:checked+label {
+        font-weight: 600;
+        color: #5a2a27;
+    }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const camposObrigatorios = document.querySelectorAll("input[required], select[required]");
+        const botao = document.querySelector("button[type='submit']");
+
+        function validar() {
+            const preenchidos = Array.from(camposObrigatorios).every(f => f.value.trim() !== "");
+            botao.disabled = !preenchidos;
+        }
+
+        camposObrigatorios.forEach(f => f.addEventListener("input", validar));
+        validar();
+    });
+</script>
